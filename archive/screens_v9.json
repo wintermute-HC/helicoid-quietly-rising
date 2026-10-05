@@ -1,0 +1,108 @@
+{
+ "_note": "映像の文字。和文が主、英文は下に小さく。稿のquoteはClaudeの記録(run02.json)からの原文引用、英文はその訳。9/30確定 / 10/2: 題名を「螺旋体　静かに立ち上がる」に、台座の段に「地の上に図を生む」を追加",
+ "title": {
+  "ja": "螺旋体　静かに立ち上がる",
+  "en": "Helicoid, Quietly Rising"
+ },
+ "epigraph": {
+  "de": "„Sie konstituieren und sie erhalten sich durch Erzeugung und Erhaltung einer Differenz zur Umwelt.“",
+  "ja": [
+   "システムは、環境との差異を生み出し、保ち続けることによって、",
+   "みずからを構成し、維持する。"
+  ],
+  "cite": "Niklas Luhmann, Soziale Systeme, 1984, S. 35"
+ },
+ "before": [
+  {
+   "ja": [
+    "台座は作品を持ち上げ、世界から隔ててきた。",
+    "本作はその代わりに、一つの円環を地に置く。",
+    "円は何も閉ざさない。ただ内と外とを区別し、地の上に図を生む。"
+   ],
+   "en": "The pedestal has raised the work and set it apart from the world. In its place, this work lays a single ring upon the ground. The circle encloses nothing. It only distinguishes inside from outside, and lets a figure emerge from the ground.",
+   "sec": 7.0
+  },
+  {
+   "ja": [
+    "静かに立ち上がる螺旋"
+   ],
+   "en": "a quietly rising spiral",
+   "sec": 3.0,
+   "big": true
+  },
+  {
+   "ja": [
+    "外から渡されるのは、この一行だけである。",
+    "どの向きに、どう重ねるかは、",
+    "外から与えられた正解ではなく、",
+    "機械自身の作動のうちで決まっていく。"
+   ],
+   "en": "Only this line is given from outside. How each stone is turned and stacked is no answer handed in from outside; it is decided within the machine's own operation.",
+   "sec": 6.5
+  }
+ ],
+ "drafts": {
+  "1": [
+   [
+    "螺旋は一方向へのねじれの継続として翻訳しました。",
+    "I translated the spiral as a twist continuing in one direction."
+   ],
+   [
+    "最上段で11°に戻して息を収めるように終えます。",
+    "At the top, it returns to 11°, ending like a breath settling."
+   ]
+  ],
+  "2": [
+   [
+    "予想図では、塔がほぼまっすぐな角柱に見え、螺旋が読み取れません。",
+    "In the preview, the tower looks like an almost straight prism; the spiral cannot be read."
+   ],
+   [
+    "「静か」は伝わりますが、「螺旋」と「立ち上がる」が形として現れていません。",
+    "\"Quiet\" comes through, but \"spiral\" and \"rising\" have not appeared as form."
+   ]
+  ],
+  "3": [
+   [
+    "作品を撮るのは主カメラなので、この視点で螺旋が立ち上がらなければ言葉は形になっていません。",
+    "The main camera is what films the work; if the spiral does not rise from this view, the words have not become form."
+   ]
+  ],
+  "4": [
+   [
+    "原因を考え直すと、回転量の不足ではなく、並びの構造に問題がありました。",
+    "Reconsidering the cause, the problem was not too little rotation, but the structure of the sequence."
+   ],
+   [
+    "これまで回転角を大きくし続けてきましたが、それは的外れな修正でした。",
+    "I kept enlarging the angles, but that correction missed the point."
+   ]
+  ],
+  "5": [
+   [
+    "今回の予想図で、初めて言葉が形として立ち現れたと判断します。",
+    "In this preview, I judge that the words have, for the first time, emerged as form."
+   ],
+   [
+    "四分の一回転を終えて静止した姿が円環の中央に落ち着き、環境との差異を最小限に刻む作品の思想とも響き合います。",
+    "Having completed a quarter turn, the figure comes to rest at the centre of the ring, in accord with the work's idea of inscribing a minimal difference from its environment."
+   ]
+  ]
+ },
+ "carry": {
+  "ja": [
+   "黒と白の立方体は、プラトン立体のひとつとして、境界の外から運び込まれる。"
+  ],
+  "en": "Black and white cubes, each a Platonic solid, are carried in from beyond the boundary.",
+  "sec": 5.5
+ },
+ "orbit": {
+  "ja": "柱は少しずつ向きを変えながら立ち上がり、ねじれとなって、みずからと環境との差異を刻む。",
+  "en": "Turning little by little, the column rises; as a twist, it inscribes the difference between itself and its environment."
+ },
+ "timing": {
+  "title": 3.5,
+  "epigraph": 6.5,
+  "veil": 0.72
+ }
+}
