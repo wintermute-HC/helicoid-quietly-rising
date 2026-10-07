@@ -55,6 +55,34 @@
 
 - 最終方策 `policy/pol_r5.npz` は、先生の助けなし(生徒単独)で、学習に使っていない **未知の 44 場面のうち 43 場面で 5 段の塔を組み上げました**(`learning/r5.py` による評価)。
 
+
+## 評価場面のseed一覧 / Evaluation seeds
+
+最終方策 `pol_r5` の評価に使った44場面です（seed 70000〜71003）。どの場面も学習には使っていません。学習データのseedは 0〜51001 と 60000〜61003 で、重なりはありません。半数の場面は乱れありで、先生（制御器）は介入しません。結果は 43/44（乱れなし 21/22・乱れあり 22/22）でした。
+The 44 scenes (seeds 70000–71003) used to evaluate the final policy `pol_r5`. None was used in training (training seeds: 0–51001 and 60000–61003). Half of the scenes are perturbed, and the teacher never intervenes. Result: 43/44 (clean 21/22, perturbed 22/22).
+
+- 一つ前の方策 pol_r4 は、別の44場面（seed 60000〜61003）で 38/44 でした。その評価で集めた添削を学習に加えたものが pol_r5 です。
+  The previous policy pol_r4 scored 38/44 on a separate set (seeds 60000–61003); its corrections were added to train pol_r5.
+- いずれも同じ環境・課題での評価です（石5個、円環1基、同じカメラと物理条件）。
+  All scenes share the same environment and task (5 stones, 1 ring, same camera and physics).
+
+○ 成功 / success　× 失敗 / failure（1個目を掴む段階で停止 / stalled at the first grasp）　🎬 映像に使用 / used in the film
+
+| | | | |
+|---|---|---|---|
+| 70000 ○ | 70001 ○ | 70002 × | 70003 ○ |
+| 70100 ○ | 70101 ○ | 70102 ○ | 70103 ○ |
+| 70200 ○ | 70201 ○ | 70202 ○ | 70203 ○ |
+| 70300 ○ 🎬 | 70301 ○ | 70302 ○ | 70303 ○ |
+| 70400 ○ | 70401 ○ | 70402 ○ | 70403 ○ |
+| 70500 ○ | 70501 ○ | 70502 ○ | 70503 ○ |
+| 70600 ○ | 70601 ○ | 70602 ○ | 70603 ○ |
+| 70700 ○ | 70701 ○ | 70702 ○ | 70703 ○ |
+| 70800 ○ | 70801 ○ | 70802 ○ | 70803 ○ |
+| 70900 ○ | 70901 ○ | 70902 ○ | 70903 ○ |
+| 71000 ○ | 71001 ○ | 71002 ○ | 71003 ○ |
+
+
 ## 再現手順
 
 動作確認環境: **Google Colab(GPU: L4)**、**Python 3.10**、`mujoco==2.3.7`、`robosuite==1.4.1`、`numpy<2`。
