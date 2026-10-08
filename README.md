@@ -127,11 +127,11 @@ python3 film/bgm_synth_1005c.py    # 音楽(full.wav)の合成
 
 ## 権利表示
 
-- **コード**: MIT License(`LICENSE` を参照)。Copyright (c) 2026 Hiroshi Chitose
-- **映像・字幕の文章(`film/screens.json` ほか)・音楽・構成記録(`compose/run02/`)**: © 2026 Hiroshi Chitose. All rights reserved.
+- **コード**: MIT License(`LICENSE` を参照)。Copyright (c) 2026 Chitose10
+- **映像・字幕の文章(`film/screens.json` ほか)・音楽・構成記録(`compose/run02/`)**: © 2026 Chitose10. All rights reserved.
 
 ---
 
 ## Summary (English)
 
-*Helicoid, Quietly Rising* turns a single line of words into a sculpture. Claude composes the rotations of a five-stone tower, checking its own rendered previews and revising them; a policy trained by imitation learning (behavior cloning + DAgger) then drives a simulated Panda arm to carry each stone from outside a ring and stack it inside. Acting alone, the final student policy (`policy/pol_r5.npz`) completed the tower in 43 of 44 unseen scenes. Developed and run on Google Colab (L4) with Python 3.10, mujoco 2.3.7, robosuite 1.4.1 and numpy<2. Code is MIT-licensed; the film, subtitle text, music and composition record (compose/run02/) are © 2026 Hiroshi Chitose. All rights reserved.
+*Helicoid, Quietly Rising* turns a single line of words into a sculpture. Claude composes the rotations of a five-stone tower, checking its own rendered previews and revising them; a policy trained by imitation learning (behavior cloning + DAgger) then drives a simulated Panda arm to carry each stone from outside a ring and stack it inside. Acting alone, the final student policy (`policy/pol_r5.npz`) completed the tower in 43 of 44 unseen scenes. Developed and run on Google Colab (L4) with Python 3.10, mujoco 2.3.7, robosuite 1.4.1 and numpy<2. Code is MIT-licensed; the film, subtitle text, music and composition record (compose/run02/) are © 2026 Chitose10. All rights reserved.
