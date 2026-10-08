@@ -4,7 +4,7 @@ import build_seisho as B
 import opening_type as OT
 from PIL import Image, ImageDraw
 SRC, REC, OUTP = sys.argv[1:4]; FPS = B.FPS; mj, me = OT.mj, OT.me
-COPY = "\u00a9 2026 Hiroshi Chitose. All rights reserved."
+COPY = "\u00a9 2026 Chitose10. All rights reserved."
 def title_runs():
     S = B.S["title"]; y = B.HH/2 - 56
     return [OT.run(B.LX, y, S["ja"], mj(52, 700), B.INK, 10, 13), OT.run(B.LX + 2, y + 84, S["en"], me(18, 500), B.EN_C, 30)]
