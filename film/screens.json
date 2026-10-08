@@ -1,5 +1,5 @@
 {
- "_note": "映像の文字。和文が主、英文は下に小さく。稿のquoteはClaudeの記録(run02.json)からの原文引用、英文はその訳。9/30確定 / 10/2: 題名を「螺旋体　静かに立ち上がる」に、台座の段に「地の上に図を生む」を追加",
+ "_note": "映像の文字。和文が主、英文は下に小さく。稿のquoteはClaudeの記録(run02.json)からの原文引用、英文はその訳。9/30確定 / 10/2: 題名を「螺旋体　静かに立ち上がる」に、台座の段に「地の上に図を生む」を追加 / 10/9: 要項(1〜3分)に合わせ、各稿の引用を1文に",
  "title": {
   "ja": "螺旋体　静かに立ち上がる",
   "en": "Helicoid, Quietly Rising"
@@ -46,20 +46,12 @@
    [
     "螺旋は一方向へのねじれの継続として翻訳しました。",
     "I translated the spiral as a twist continuing in one direction."
-   ],
-   [
-    "最上段で11°に戻して息を収めるように終えます。",
-    "At the top, it returns to 11°, ending like a breath settling."
    ]
   ],
   "2": [
    [
     "予想図では、塔がほぼまっすぐな角柱に見え、螺旋が読み取れません。",
     "In the preview, the tower looks like an almost straight prism; the spiral cannot be read."
-   ],
-   [
-    "「静か」は伝わりますが、「螺旋」と「立ち上がる」が形として現れていません。",
-    "\"Quiet\" comes through, but \"spiral\" and \"rising\" have not appeared as form."
    ]
   ],
   "3": [
@@ -72,20 +64,12 @@
    [
     "原因を考え直すと、回転量の不足ではなく、並びの構造に問題がありました。",
     "Reconsidering the cause, the problem was not too little rotation, but the structure of the sequence."
-   ],
-   [
-    "これまで回転角を大きくし続けてきましたが、それは的外れな修正でした。",
-    "I kept enlarging the angles, but that correction missed the point."
    ]
   ],
   "5": [
    [
     "今回の予想図で、初めて言葉が形として立ち現れたと判断します。",
     "In this preview, I judge that the words have, for the first time, emerged as form."
-   ],
-   [
-    "四分の一回転を終えて静止した姿が円環の中央に落ち着き、環境との差異を最小限に刻む作品の思想とも響き合います。",
-    "Having completed a quarter turn, the figure comes to rest at the centre of the ring, in accord with the work's idea of inscribing a minimal difference from its environment."
    ]
   ]
  },
