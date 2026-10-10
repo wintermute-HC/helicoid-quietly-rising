@@ -42,12 +42,15 @@
 │   ├── film2.py             組み上げの撮影(先生/生徒を切替)
 │   ├── build_seisho.py      字幕・構成記録・撮影素材から映像を組む
 │   ├── build_v9.py          映像組み立て(10/5版、約3分47秒)
-│   ├── build_v11.py         最終版の映像組み立て(10/9版、178.2秒。各稿1文・2〜4個目の石を2倍速)
+│   ├── build_v11.py         映像組み立て(10/9版、178.2秒。各稿1文・2〜4個目の石を2倍速)
+│   ├── build_v12.py         最終版の映像組み立て(10/10版、175.2秒。build_v11 にコンセプト画面・第一〜第四稿の2×2を追加、周回を短縮)
+│   ├── helix_concept_video.py  映像用の「循環としての塔」の図(報告書の図4を表示寸法に合わせて描き直したもの)
 │   ├── marks1009.py         2倍速区間(石の切り替わりの時点)を再シミュレーションで求める
 │   ├── opening_type.py      冒頭の文字の打ち出し
 │   ├── screens.json         字幕の文章
 │   ├── bgm_synth_1005c.py   音楽の合成(10/5版)
-│   └── bgm_synth_1009.py    音楽の合成(最終版、178.2秒の区間に合わせたもの)
+│   ├── bgm_synth_1009.py    音楽の合成(10/9版、178.2秒の区間)
+│   └── bgm_synth_1010.py    音楽の合成(最終版、175.2秒の区間に合わせたもの)
 ├── policy/pol_r5.npz   最終方策(生徒)
 └── archive/    試作・旧版(参考として残しているもの。セットアップ用の setup_env.sh もここ)
 ```
@@ -121,8 +124,10 @@ ACTOR=student POL=policy/pol_r5.npz REL=0,22.5,22.5,22.5,22.5 SEED=70300 OUT=out
 # 7. 映像の組み立て(ffmpeg、Noto Serif CJK・Lora・M PLUS 1 Code・JetBrains Mono の各書体が必要)
 #    構成記録フォルダには、映像に使った構成記録 compose/run02 を使う
 /content/ev310/bin/python film/marks1009.py    # 2倍速にする区間を求める(marks1009.json、歩数1,897の一致を確認)
-MARKS=marks1009.json /content/ev310/bin/python film/build_v11.py <撮影素材フォルダ> compose/run02 out/helicoid.mp4
-python3 film/bgm_synth_1009.py    # 音楽(full.wav)の合成
+python3 film/helix_concept_video.py figs/helix_cycle_concept_video.png    # 映像用の塔の図
+#    figs/ には河本英夫『現代思想』1993年9月号 p.46 の原図の写真 kawamoto1993_p46_fig_crop.png も置く(著作物のため同梱しない)
+MARKS=marks1009.json HELICOID_FIG=figs /content/ev310/bin/python film/build_v12.py <撮影素材フォルダ> compose/run02 out/helicoid.mp4
+python3 film/bgm_synth_1010.py    # 音楽(full.wav)の合成
 ```
 
 注意:

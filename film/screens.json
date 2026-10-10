@@ -1,5 +1,5 @@
 {
- "_note": "映像の文字。和文が主、英文は下に小さく。稿のquoteはClaudeの記録(run02.json)からの原文引用、英文はその訳。9/30確定 / 10/2: 題名を「螺旋体　静かに立ち上がる」に、台座の段に「地の上に図を生む」を追加 / 10/9: 要項(1〜3分)に合わせ、各稿の引用を1文に",
+ "_note": "映像の文字。和文が主、英文は下に小さく。稿のquoteはClaudeの記録(run02.json)からの原文引用、英文はその訳。9/30確定 / 10/2: 題名を「螺旋体　静かに立ち上がる」に、台座の段に「地の上に図を生む」を追加 / 10/9: 要項(1〜3分)に合わせ、各稿の引用を1文に / 10/10 v12: 引用の次にコンセプト画面(河本図+循環としての塔+コンセプト文)、第一〜第四稿を2×2の1枚に、周回の冒頭4.8秒を省略",
  "title": {
   "ja": "螺旋体　静かに立ち上がる",
   "en": "Helicoid, Quietly Rising"
@@ -87,6 +87,32 @@
  "timing": {
   "title": 3.5,
   "epigraph": 6.5,
-  "veil": 0.72
+  "veil": 0.72,
+  "orbit_skip": 4.8
+ },
+ "concept": {
+  "ja": [
+   "立方体を置くたびに四隅は少しずつ回り、五段目で一周の円を閉じる。",
+   "閉じた循環は、外から運ばれる石にだけ開いている。"
+  ],
+  "en": "Each time a cube is placed, its four corners turn a little; at the fifth tier, they close a full circle. The closed cycle opens only to stones carried in from outside.",
+  "fig_left": {
+   "ja": [
+    "河本英夫「第三世代システム　オートポイエーシス」",
+    "『現代思想』1993年9月号 p.46"
+   ],
+   "en": "Hideo Kawamoto, Gendai Shisō, Sept. 1993, p.46"
+  },
+  "fig_right": {
+   "ja": "河本の循環を塔として読む（筆者による解釈）",
+   "en": "Kawamoto's cycle read as a tower — the artist's interpretation"
+  },
+  "sec": 9.5,
+  "delay": 2.5
+ },
+ "sheet_ja": {
+  "2": "予想図では、塔がほぼまっすぐな角柱に見え、\n螺旋が読み取れません。",
+  "3": "作品を撮るのは主カメラなので、この視点で\n螺旋が立ち上がらなければ言葉は形になっていません。",
+  "4": "原因を考え直すと、回転量の不足ではなく、\n並びの構造に問題がありました。"
  }
 }
