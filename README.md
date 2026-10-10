@@ -124,6 +124,7 @@ ACTOR=student POL=policy/pol_r5.npz REL=0,22.5,22.5,22.5,22.5 SEED=70300 OUT=out
 # 7. 映像の組み立て(ffmpeg、Noto Serif CJK・Lora・M PLUS 1 Code・JetBrains Mono の各書体が必要)
 #    構成記録フォルダには、映像に使った構成記録 compose/run02 を使う
 /content/ev310/bin/python film/marks1009.py    # 2倍速にする区間を求める(marks1009.json、歩数1,897の一致を確認)
+mkdir -p figs
 python3 film/helix_concept_video.py figs/helix_cycle_concept_video.png    # 映像用の塔の図
 #    figs/ には河本英夫『現代思想』1993年9月号 p.46 の原図の写真 kawamoto1993_p46_fig_crop.png も置く(著作物のため同梱しない)
 MARKS=marks1009.json HELICOID_FIG=figs /content/ev310/bin/python film/build_v12.py <撮影素材フォルダ> compose/run02 out/helicoid.mp4
