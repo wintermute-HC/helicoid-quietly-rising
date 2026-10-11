@@ -44,6 +44,7 @@
 │   ├── build_v9.py          映像組み立て(10/5版、約3分47秒)
 │   ├── build_v11.py         映像組み立て(10/9版、178.2秒。各稿1文・2〜4個目の石を2倍速)
 │   ├── build_v12.py         最終版の映像組み立て(10/10版、175.2秒。build_v11 にコンセプト画面・第一〜第四稿の2×2を追加、周回を短縮)
+│   ├── patch_v13.py         v13(10/11、最終版): v12 の周回場面の字幕だけを差し替える(長さ・音楽は v12 のまま)
 │   ├── helix_concept_video.py  映像用の「循環としての塔」の図(報告書の図4を表示寸法に合わせて描き直したもの)
 │   ├── marks1009.py         2倍速区間(石の切り替わりの時点)を再シミュレーションで求める
 │   ├── opening_type.py      冒頭の文字の打ち出し
@@ -129,6 +130,9 @@ python3 film/helix_concept_video.py figs/helix_cycle_concept_video.png    # 映�
 #    figs/ には河本英夫『現代思想』1993年9月号 p.46 の原図の写真 kawamoto1993_p46_fig_crop.png も置く(著作物のため同梱しない)
 MARKS=marks1009.json HELICOID_FIG=figs /content/ev310/bin/python film/build_v12.py <撮影素材フォルダ> compose/run02 out/helicoid.mp4
 python3 film/bgm_synth_1010.py    # 音楽(full.wav)の合成
+#    screens.json は v13 の字幕に更新済みなので、build_v12.py で組み立てると v13 と同じ字幕になる。
+#    公開した v13 は、v12 の映像に patch_v13.py で字幕を差し替えて作った:
+#    python3 film/patch_v13.py <v12_noaudio.mp4> <撮影素材フォルダ>/orbit.mp4 <出力mp4>
 ```
 
 注意:
