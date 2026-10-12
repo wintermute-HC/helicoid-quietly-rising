@@ -22,11 +22,14 @@ def evaluate(name, pol):
 D = [f"{M}/dagger_r{i}" for i in range(6)] + ([f"{M}/dagger_eval4"] if os.path.isdir(f"{M}/dagger_eval4") else [])
 CONDS = [("full", D, "all"), ("notilt", D, "notilt"), ("nomm", D, "nomm"), ("noextra", D, "noextra"), ("bconly", D[:1], "all")]
 SUM = f"{DRV}/summary.json"; S = json.load(open(SUM)) if os.path.exists(SUM) else []
+S = [s for s in S if s["n"] == len(SEEDS)]                                      # 欠けのある評価は数え直す(終わった場面は飛ばす)
 done = {s["name"] for s in S}
 log(f"開始: 並列 {NW}、教材 {[os.path.basename(d) for d in D]}")
+# 10/12: 並列の担当が同時に円環の形(/tmp/pai_tex/torus.obj)を書き出して読み損ねる競合があったため、先に1回だけ作っておく
+subprocess.run([PY, "-c", "import sys; sys.path[:0]=['../sim','.']; from tower_env import textures, torus_mesh; textures(); torus_mesh()"], cwd=W)
 if "control_pol_r5" not in done:
     r = evaluate("control_pol_r5", f"{M}/pol_r5.npz"); S.append(r); json.dump(S, open(SUM, "w"), indent=1); log(f"対照 {r}")
-    if r["total"] != 43: log("pol_r5 が 43/44 を再現しないため停止(環境が10/4と違う可能性)"); log("ABL_DONE"); sys.exit()
+    if r["total"] != 43 or r["n"] != len(SEEDS): log("pol_r5 が 43/44 を再現しないため停止(環境が10/4と違う可能性)"); log("ABL_DONE"); sys.exit()
 for cname, dirs, keep in CONDS:
     for seed in (0, 1, 2):
         name = f"{cname}_s{seed}"
