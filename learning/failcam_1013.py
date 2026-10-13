@@ -17,7 +17,8 @@ W, HH, FPS = 1280, 720, 20
 PH = ["接近", "掴む直前", "閉じる途中", "持ち上げ", "運搬・回転", "置く直前", "離した後"]
 FONT = next((p for p in ("/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf", "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
                          "/usr/share/fonts/truetype/ipafont/ipag.ttf") if os.path.exists(p)), None)
-F1 = ImageFont.truetype(FONT, 30) if FONT else ImageFont.load_default(); F2 = ImageFont.truetype(FONT, 24) if FONT else F1
+assert FONT, "日本語の書体がない(Colab では apt-get install -y fonts-ipafont-gothic)"
+F1, F2 = ImageFont.truetype(FONT, 30), ImageFont.truetype(FONT, 24)
 class Masked(NumpyMLP):
     def __init__(self, path):
         super().__init__(path); z = np.load(path); self.keep = z["keep"] if "keep" in z.files else np.arange(F_DIM)
@@ -61,13 +62,17 @@ def frame(n, extra=None):
     for i, s in enumerate(L):
         col = (190, 40, 30) if ("食い違い" in s or (h and i == 4 and (h["gs"] > 0) != (h["gt"] > 0))) else (28, 27, 26)
         d.text((30, 26 + 38*i), s, font=F1 if i == 0 else F2, fill=col)
-    enc.stdin.write(np.asarray(im).tobytes())
-n = 0; frame(0)
+    enc.stdin.write(np.asarray(im).tobytes()); return im
+n = 0; frame(0); shot = False
 while not ex.done and n < 6000 and ex.stuck < 3:
     o, *_ = env.step(ex.act(o)); n += 1
-    if n % SKIP == 0: frame(n)
+    if n % SKIP == 0 or (not shot and ex.hud and ex.hud["na"] == MAX_ACT - 10):
+        im = frame(n)
+        if not shot and ex.hud and ex.hud["na"] == MAX_ACT - 10: im.save(out[:-4] + "_stall.png"); shot = True   # 最初の停止の10歩前を静止画に
 for _ in range(60): o, *_ = env.step(np.r_[np.zeros(6), -1.0])
 ok, rows = tower_report(env, REL)
-for _ in range(FPS*3): frame(n, f"結果：{'成功' if ok else '失敗'}（{n}歩、停止 {ex.stuck}回）")
+for i in range(FPS*3):
+    im = frame(n, f"結果：{'成功' if ok else '失敗'}（{n}歩、停止 {ex.stuck}回）")
+    if i == 0: im.save(out[:-4] + "_end.png")
 enc.stdin.close(); enc.wait()
 print(json.dumps(dict(seed=seed, ok=bool(ok), steps=n, stuck=ex.stuck, out=out), ensure_ascii=False), flush=True)
